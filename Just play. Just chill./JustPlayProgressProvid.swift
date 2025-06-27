@@ -37,16 +37,7 @@ struct JustPlayLoadingOverlay<Background: View>: View, JustPlayProgressDisplayab
     private func content(in geometry: GeometryProxy) -> some View {
         VStack(spacing: 32) {
             Spacer()
-            Text("Zombie Survival Loading")
-                .font(.system(size: 32, weight: .bold, design: .monospaced))
-                .foregroundColor(.red)
-                .shadow(color: .red.opacity(0.7), radius: 8, x: 0, y: 0)
-                .padding(.bottom, 8)
-            Text("Stay alive while we prepare your apocalypse...")
-                .font(.system(size: 18, weight: .medium, design: .monospaced))
-                .foregroundColor(.red.opacity(0.8))
-                .multilineTextAlignment(.center)
-                .padding(.bottom, 24)
+            
             progressSection(width: min(geometry.size.width * 0.7, 400))
             Spacer()
             Text("Loading \(progressPercentage)%")
@@ -123,7 +114,7 @@ struct JustPlayProgressBar: View {
 
 // MARK: - Превью
 
-#Preview("Zombie Loading") {
+#Preview("Loading") {
     JustPlayLoadingOverlay(progress: 0.42)
 }
 
